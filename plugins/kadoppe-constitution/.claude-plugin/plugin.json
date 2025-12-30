@@ -1,0 +1,9 @@
+{
+  "name": "kadoppe-constitution",
+  "version": "1.0.0",
+  "description": "Enforce software development constitution - kadoppe's principles and standards",
+  "author": {
+    "name": "kadoppe"
+  },
+  "keywords": ["constitution", "principles", "standards", "code-review", "quality"]
+}

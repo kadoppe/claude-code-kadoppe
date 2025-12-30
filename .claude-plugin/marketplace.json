@@ -1,0 +1,21 @@
+{
+  "name": "claude-code-kadoppe",
+  "owner": {
+    "name": "kadoppe"
+  },
+  "metadata": {
+    "description": "kadoppe's digital twin - plugins that embody kadoppe's knowledge, workflows, and coding style",
+    "version": "1.0.0",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "kadoppe-constitution",
+      "source": "./kadoppe-constitution",
+      "description": "Enforce software development constitution - kadoppe's principles and standards",
+      "version": "1.0.0",
+      "keywords": ["constitution", "principles", "standards", "code-review", "quality"],
+      "category": "quality"
+    }
+  ]
+}
