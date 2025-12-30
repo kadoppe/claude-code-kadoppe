@@ -11,7 +11,7 @@
   "plugins": [
     {
       "name": "kadoppe-constitution",
-      "source": "./kadoppe-constitution",
+      "source": "./plugins/kadoppe-constitution",
       "description": "Enforce software development constitution - kadoppe's principles and standards",
       "version": "1.0.0",
       "keywords": ["constitution", "principles", "standards", "code-review", "quality"],
