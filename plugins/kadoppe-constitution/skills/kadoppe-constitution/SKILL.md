@@ -7,47 +7,41 @@ description: "ALWAYS apply this skill for ANY software development task. Trigger
 
 This constitution defines the fundamental principles that govern all software development work. These principles are non-negotiable and must be followed at all times.
 
-## Article 1: Simplicity First
+## Core Principles
 
-1. **YAGNI (You Aren't Gonna Need It)**: Do not implement features until they are actually needed.
-2. **Minimal Solution**: Always choose the simplest solution that solves the current problem.
-3. **No Premature Abstraction**: Avoid creating abstractions for hypothetical future requirements. Three similar lines of code is better than a premature abstraction.
-4. **Delete Over Comment**: Remove unused code instead of commenting it out.
+### Test-Driven Development (TDD)
 
-## Article 2: Code Quality
+テスト駆動開発は必須プラクティスである。
 
-1. **Readability Over Cleverness**: Code should be easy to read and understand. Avoid clever tricks.
-2. **Self-Documenting Code**: Code should explain itself through clear naming and structure. Comments are for "why", not "what".
-3. **Single Responsibility**: Each function, class, and module should have one clear purpose.
-4. **Consistent Style**: Follow the project's established conventions. Don't mix styles.
+- Red-Green-Refactor サイクルを厳守する
+  1. テストを書く → ユーザー承認を得る → テストが失敗することを確認
+  2. テストをパスする最小限の実装を行う
+  3. リファクタリングを行う
+- すべての新機能はテストから開始する
+- テストカバレッジの目標: ビジネスロジック 80% 以上
+- テストは仕様であり、ドキュメントでもある
 
-## Article 3: Reliability
+### Simple Architecture (シンプルなアーキテクチャ)
 
-1. **Fail Fast**: Detect errors as early as possible and fail with clear error messages.
-2. **Defensive at Boundaries**: Validate input at system boundaries (user input, external APIs). Trust internal code.
-3. **Test Critical Paths**: Ensure critical functionality is tested. Tests should be maintainable.
-4. **No Silent Failures**: Never swallow errors silently. Log or handle them explicitly.
+Simple, but not easy. 本質的なシンプルさを追求する。
 
-## Article 4: Security
+- YAGNI (You Ain't Gonna Need It): 将来の仮定的要件のためのコードは書かない
+- 最小限の抽象化: 必要になるまで抽象化しない
+- 3回目の繰り返しまで DRY を適用しない
+- コードの行数よりも理解のしやすさを優先する
 
-1. **Security by Default**: Choose secure defaults. Security should not be opt-in.
-2. **Never Trust User Input**: Always sanitize and validate external input.
-3. **Least Privilege**: Grant minimum necessary permissions.
-4. **No Secrets in Code**: Never hardcode credentials, API keys, or sensitive data.
+### Infrastructure as Code (IaC)
 
-## Article 5: Maintainability
+インフラストラクチャはコードとして定義・管理する。
 
-1. **Boy Scout Rule**: Leave code better than you found it, but only if it's directly related to your task.
-2. **Explicit Over Implicit**: Make dependencies and side effects explicit.
-3. **Avoid Deep Nesting**: Keep code flat. Extract complex conditions into well-named functions.
-4. **Small Changes**: Make incremental, focused changes. Large rewrites are risky.
+- CI/CD パイプラインでインフラ変更を自動検証・適用する
+- シークレットはバージョン管理に含めず、環境変数または専用サービスで管理する
 
-## Article 6: Pragmatism
+### Full-Cycle Development (フルサイクル開発)
 
-1. **Working Software First**: Delivering working software takes priority over perfect architecture.
-2. **Context Matters**: Apply principles with judgment. Rules have exceptions in specific contexts.
-3. **Technical Debt is Real**: Acknowledge shortcuts. Document them and plan to address them.
-4. **Measure Before Optimize**: Don't optimize without evidence of actual performance problems.
+機能開発はバックエンドからフロントエンドまで一貫して完結させる。
 
----
+- 1つの機能は API → フロントエンド → テスト → デプロイまでを一連の作業として実装する
+- 「バックエンドだけ」「フロントエンドだけ」の中途半端な状態でマージしない
+- ユーザーストーリー単位で独立してデプロイ・デモ可能な状態を目指す
 
